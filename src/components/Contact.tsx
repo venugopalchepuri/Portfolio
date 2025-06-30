@@ -182,9 +182,13 @@ Message: ${formData.message}`;
                 <div className="w-32 h-32 rounded-full bg-gradient-to-r from-neon-blue via-neon-purple to-neon-green p-1 animate-glow">
                   <div className="w-full h-full rounded-full overflow-hidden bg-cyber-gray">
                     <img 
-                      src="WhatsApp Image 2025-06-26 at 16.10.51_6fa4e578.jpg"
+                      src="WhatsApp%20Image%202025-06-26%20at%2016.10.51_6fa4e578.jpg"
                       alt="Venugopal Chepuri - Contact"
                       className="w-full h-full object-cover"
+                      onError={(e) => {
+                        console.log('Contact image failed to load, trying alternative path');
+                        e.target.src = "image.png"; // Fallback image
+                      }}
                     />
                   </div>
                 </div>

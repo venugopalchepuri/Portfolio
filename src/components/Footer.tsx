@@ -150,9 +150,13 @@ const Footer = () => {
             <div className="w-20 h-20 rounded-full bg-gradient-to-r from-quode-cyan to-quode-magenta p-1 mx-auto mb-4 animate-pulse-glow">
               <div className="w-full h-full rounded-full overflow-hidden bg-cyber-dark">
                 <img 
-                  src="WhatsApp Image 2025-06-26 at 15.33.37_724db8c1.jpg"
+                  src="WhatsApp%20Image%202025-06-26%20at%2015.33.37_724db8c1.jpg"
                   alt="Venugopal Chepuri - QUODE Creator"
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    console.log('Footer image failed to load, trying alternative path');
+                    e.target.src = "image.png"; // Fallback image
+                  }}
                 />
               </div>
             </div>
