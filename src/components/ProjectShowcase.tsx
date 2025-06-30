@@ -74,7 +74,7 @@ const projects = [
     category: 'Lifestyle & Travel',
     problem: 'Planning travel is often overwhelming with disconnected tools and last-minute chaos.',
     solution: 'Developed an all-in-one travel planner with checklists, currency converter, guides, and itinerary planner — all in a smooth UI.',
-    image: '/public/Gemini_Generated_Image_6xynuo6xynuo6xyn.png',
+    image: 'Gemini_Generated_Image_6xynuo6xynuo6xyn.png',
     mockup: '',
     techStack: [
       { name: 'React.js', icon: '⚛️', color: 'blue' },
@@ -111,7 +111,7 @@ const projects = [
     category: 'AI + FoodTech',
     problem: 'People often spend too much time deciding what to eat and end up picking the same dishes.',
     solution: 'Designed an AI-based recommendation system that suggests food based on mood, weather, time, and budget.',
-    image: '/public/Gemini_Generated_Image_vak73wvak73wvak7.png',
+    image: 'Gemini_Generated_Image_vak73wvak73wvak7.png',
     mockup: 'https://media.licdn.com/dms/image/v2/D5622AQFi22II8gDN0g/feedshare-shrink_800/B56ZafDLQYGoAg-/0/1746425135221?e=1753920000&v=beta&t=8PzUgrhZfPnTOfAnrDzksj83-rxbDpHhpaiY046I-78',
     techStack: [
       { name: 'React.js', icon: '⚛️', color: 'blue' },

@@ -235,7 +235,7 @@ const Hero = () => {
               className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/10 shadow-xl"
             >
               <img 
-                src="/public/WhatsApp Image 2025-06-26 at 16.10.51_6fa4e578.jpg"
+                src="WhatsApp Image 2025-06-26 at 16.10.51_6fa4e578.jpg"
                 alt="Venugopal Chepuri - Coding Prodigy & Quiz Legend"
                 className="w-full h-full object-cover object-center"
               />

@@ -105,7 +105,7 @@ const About = () => {
                 <div className="w-32 h-32 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple p-1 mx-auto mb-4 animate-glow">
                   <div className="w-full h-full rounded-full overflow-hidden bg-cyber-dark">
                     <img 
-                      src="/public/WhatsApp Image 2025-06-26 at 16.10.51_6fa4e578.jpg"
+                      src="WhatsApp Image 2025-06-26 at 16.10.51_6fa4e578.jpg"
                       alt="Venugopal Chepuri - About"
                       className="w-full h-full object-cover"
                     />
