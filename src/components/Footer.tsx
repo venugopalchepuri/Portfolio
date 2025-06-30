@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, ArrowUp, Code, HelpCircle, Zap, Download, Linkedin, Instagram, Github } from 'lucide-react';
+import { Heart, ArrowUp, Code, HelpCircle, Zap, Download, Linkedin, Instagram, Github, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -192,13 +192,14 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Resume Download Button */}
+          {/* Action Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mb-8"
+            className="mb-8 flex flex-col sm:flex-row justify-center gap-4"
           >
+            {/* Resume Download Button */}
             <motion.a
               href="https://drive.google.com/file/d/1O-1Z5Nam4pGDFfxr8CEOXuJjPXVcCanM/view?usp=drive_link"
               target="_blank"
@@ -212,6 +213,22 @@ const Footer = () => {
             >
               <Download className="w-5 h-5" />
               <span>Download Resume</span>
+            </motion.a>
+
+            {/* WhatsApp Contact Button */}
+            <motion.a
+              href="https://wa.link/1epj77"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: '0 0 25px rgba(0, 255, 0, 0.4)'
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center space-x-3 bg-gradient-to-r from-green-500/20 to-green-400/20 backdrop-blur-sm border border-green-400/40 hover:border-green-400/60 rounded-xl px-6 py-3 text-green-400 font-semibold transition-all duration-300"
+            >
+              <MessageCircle className="w-5 h-5" />
+              <span>Send Message</span>
             </motion.a>
           </motion.div>
 

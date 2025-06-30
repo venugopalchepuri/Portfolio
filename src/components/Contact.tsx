@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Mail, Phone, MapPin, Send, Download, Linkedin, Github, Twitter, FileText } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Download, Linkedin, Github, Twitter, FileText, Instagram, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -29,10 +29,18 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    // Redirect to WhatsApp with the message
+    const message = `Hi Venugopal! 
+
+Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}
+
+Message: ${formData.message}`;
     
-    console.log('Form submitted:', formData);
+    const whatsappUrl = `https://wa.link/1epj77?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+    
     setIsSubmitting(false);
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
@@ -65,8 +73,8 @@ const Contact = () => {
             className="bg-cyber-gray/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 hover:border-neon-blue/30 transition-all duration-300"
           >
             <h3 className="text-2xl font-semibold text-white mb-6 flex items-center space-x-3">
-              <Send className="w-8 h-8 text-neon-blue" />
-              <span>Send Message</span>
+              <MessageCircle className="w-8 h-8 text-neon-green" />
+              <span>Send WhatsApp Message</span>
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -144,17 +152,17 @@ const Contact = () => {
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-neon-blue to-neon-purple px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-neon-blue/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                className="w-full bg-gradient-to-r from-neon-green to-neon-blue px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-neon-green/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
               >
                 {isSubmitting ? (
                   <>
                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    <span>Sending...</span>
+                    <span>Opening WhatsApp...</span>
                   </>
                 ) : (
                   <>
-                    <Send className="w-5 h-5" />
-                    <span>Send Message</span>
+                    <MessageCircle className="w-5 h-5" />
+                    <span>Send via WhatsApp</span>
                   </>
                 )}
               </motion.button>
@@ -190,22 +198,26 @@ const Contact = () => {
               
               {/* Floating Action Buttons */}
               <div className="flex justify-center space-x-4">
-                <motion.button
+                <motion.a
+                  href="https://drive.google.com/file/d/1O-1Z5Nam4pGDFfxr8CEOXuJjPXVcCanM/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -5 }}
                   whileTap={{ scale: 0.9 }}
                   className="flex items-center space-x-2 bg-neon-green/20 hover:bg-neon-green/30 border border-neon-green/50 rounded-lg px-6 py-3 text-neon-green font-medium transition-all duration-300"
                 >
                   <Download className="w-5 h-5" />
                   <span>Resume</span>
-                </motion.button>
-                <motion.button
+                </motion.a>
+                <motion.a
+                  href="mailto:venugopalchepuri1@gmail.com"
                   whileHover={{ scale: 1.1, y: -5 }}
                   whileTap={{ scale: 0.9 }}
                   className="flex items-center space-x-2 bg-neon-blue/20 hover:bg-neon-blue/30 border border-neon-blue/50 rounded-lg px-6 py-3 text-neon-blue font-medium transition-all duration-300"
                 >
                   <Mail className="w-5 h-5" />
                   <span>Mail Me</span>
-                </motion.button>
+                </motion.a>
               </div>
             </div>
 
@@ -215,8 +227,8 @@ const Contact = () => {
               
               <div className="space-y-4">
                 {[
-                  { icon: Mail, label: 'Email', value: 'venu.chepuri@email.com', href: 'mailto:venu.chepuri@email.com', color: 'neon-blue' },
-                  { icon: Phone, label: 'Phone', value: '+91 98765 43210', href: 'tel:+919876543210', color: 'neon-green' },
+                  { icon: Mail, label: 'Email', value: 'venugopalchepuri1@gmail.com', href: 'mailto:venugopalchepuri1@gmail.com', color: 'neon-blue' },
+                  { icon: Phone, label: 'Phone', value: '+91 72076 30778', href: 'tel:+917207630778', color: 'neon-green' },
                   { icon: MapPin, label: 'Location', value: 'Greater Noida, India', href: '#', color: 'neon-purple' }
                 ].map((contact, index) => (
                   <motion.a
@@ -246,13 +258,15 @@ const Contact = () => {
               
               <div className="flex space-x-4">
                 {[
-                  { icon: Linkedin, label: 'LinkedIn', href: '#', color: 'neon-blue' },
-                  { icon: Github, label: 'GitHub', href: '#', color: 'neon-green' },
-                  { icon: Twitter, label: 'Twitter', href: '#', color: 'neon-purple' }
+                  { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/venugopal-chepuri-b4899a223?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', color: 'neon-blue' },
+                  { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/chepuri_venugopal/', color: 'neon-purple' },
+                  { icon: Github, label: 'GitHub', href: 'https://github.com/venugopalchepuri', color: 'neon-green' }
                 ].map((social, index) => (
                   <motion.a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
